@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="#{pronostic.title}"></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1 th:text="#{pronostic.title}"></h1>
+	<form th:action="@{/pronostic}" th:object="${pronostic}" method="POST">
+		<table border="1" style="with=300px">
+			<tr>
+				<td><img th:src="${rencontre.teamDom.flag}" width="100" th:alt="${rencontre.teamDom.name}" th:title="${rencontre.teamDom.name}"/></td>
+	 			<td th:text="${rencontre.teamDom.name}"></td>
+	 			<td><input type="text" th:field="*{scoreDom}"/></td>
+	 			<td> - </td>
+	 			<td><input type="text" th:field="*{scoreExt}"/></td>
+	 			<td th:text="${rencontre.teamExt.name}"></td>
+	 			<td><img th:src="${rencontre.teamExt.flag}" width="100" th:alt="${rencontre.teamExt.name}" th:title="${rencontre.teamExt.name}"/></td>
+			</tr>
+			<tr>
+				<td colspan="7">
+					<input type="submit" value="submit"/>
+					<input type="reset" value="reset"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="7">
+					<a th:text="#{pronostic.retour.rencontres}" th:href="'/liste_rencontres'"></a>
+				</td>
+			</tr>
+		</table>  
+		<input type="hidden" th:field="*{rencontreId}"/>
+	</form>
+</body>
+</html>

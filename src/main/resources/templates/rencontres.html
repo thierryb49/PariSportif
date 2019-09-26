@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="#{rencontres.title}"></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1 th:text="#{rencontres.title}"></h1>
+<table border="1" style="with=300px">
+	<tr th:each ="rencontre : ${rencontres}">
+		<td><img th:src="${rencontre.teamDom.flag}" width="30" th:alt="${rencontre.teamDom.name}" th:title="${rencontre.teamDom.name}"/></td>
+	 	<td th:text="${rencontre.teamDom.name}"></td>
+	 	<td th:text="${rencontre.scoredom}"></td>
+	 	<td> - </td>
+	 	<td th:text="${rencontre.scoreext}"></td>
+	 	<td th:text="${rencontre.teamExt.name}"></td>
+	 	<td><img th:src="${rencontre.teamExt.flag}" width="30" th:alt="${rencontre.teamExt.name}" th:title="${rencontre.teamExt.name}"/></td>
+	 	<td><a th:text="#{rencontres.pronosticer}" th:href="'/pronostic?rid='+${rencontre.id}"></a></td>
+	</tr>
+</table>
+<br/>
+<table border="1" style="with=100px">
+	<tr th:each ="pronostic : ${pronostics}">
+		<td th:text="${pronostic.id}"></td>
+	 	<td th:text="${pronostic.scoreDom}"></td>
+	 	<td> - </td>
+	 	<td th:text="${pronostic.scoreExt}"></td>
+	 </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+Hi thierry,
+
+thanks for registering for an API authentication token. Please modify your client to use a HTTP header named "X-Auth-Token" with the underneath personal token as value.
+
+Your API email: thierry_bouillon@hotmail.com
+Your API token: 3b4b9e71c1484492b77d3bfa7684af11
+Your API plan: Free Tier
+
+In order to keep your account active and receive updates, please verify your e-mail address by clicking here.
+
+Some useful links to get started:
+
+Quickstart guide:
+https://www.football-data.org/documentation/quickstart/
+
+Full API Documentation:
+https://www.football-data.org/documentation/api
+
+The complete competition coverage:
+https://www.football-data.org/coverage
+
+Pricing for all our plans:
+https://www.football-data.org/pricing
+
+Blog with latest updates:
+https://www.football-data.org/blog
+
+If you face bugs, problems or any question concerning the API in general, feel free to ask!
+
+Best,
+daniel
+
+----------------------------------------------------------------
+https://www.football-data.org/
+----------------------------------------------------------------
+https://api.football-data.org/v2/competitions/FL1/teams
+
+Content-Type	:	application/json
+Accept			: 	application/json
+X-Auth-Token	:  	3b4b9e71c1484492b77d3bfa7684af11
+
+----------------------------------------------------------------
+https://quicktype.io/
+----------------------------------------------------------------
+Transform du JSON en d'autres...
+
+
+http://localhost:8181/api/load_teams?code_competition=FL1
+https://api.football-data.org/v2/competitions/FL1/matches/?matchday=7
