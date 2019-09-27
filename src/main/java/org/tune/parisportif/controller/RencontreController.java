@@ -129,10 +129,11 @@ public class RencontreController {
 		log.info(String.format("listeRencontres"));	
 		Collection<Pronostic> pronostics = pronosticRepository.pronosticsParPhaseParUser(Utils.getActivePhaseId(), Utils.getUserId());
 		Collection<Rencontre> rencontres = rencontreRepository.findAllByPhaseId(Utils.getActivePhaseId());
-		rencontres.forEach(rencontre->{
+		/*rencontres.forEach(rencontre->{
 			rencontre.setPronostic(pronostics.stream().filter(pronostic->pronostic.getRencontreId().equals(rencontre.getId())).collect(Collectors.toList()));
 			//rencontre.setPronostic(pronostics.stream().filter(pronostic->pronostic.getRencontreId().equals(rencontre.getId()).collect(Collectors.toList())));
 		});
+		*/
 		log.info(String.format("listeRencontres: %s", rencontres));	
 		model.addAttribute("rencontres", rencontres);
 		//model.addAttribute("pronostics", pronosticRepository.findAllByUserId(Utils.getUserId()));
