@@ -47,3 +47,6 @@ Transform du JSON en d'autres...
 
 http://localhost:8181/api/load_teams?code_competition=FL1
 https://api.football-data.org/v2/competitions/FL1/matches/?matchday=7
+
+fin
+
